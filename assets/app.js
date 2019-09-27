@@ -1,72 +1,80 @@
-// Game counters
-var winCounter = 0;
-var lossCounter = 0;
-var numGuesses = 9;
+//correct answers
+countCorrect = function () {
+  c = $("#exampleRadios1:checked").length;
+};
+countCorrect();
+$("input[type=radio]").on("click", countCorrect);
 
 
-setTimeout(timeUp, 1000 * 60);
+//incorrect answers
+countIncorrect = function () {
+  I = $("#exampleRadios2:checked").length;
+};
+countIncorrect();
+$("input[type=radio]").on("click", countIncorrect);
+
+////////////////////////////////////////////////////////////////////////////////
 
 
-function timeUp() {
-    // in the element with an id of time-left add an h2 saying Time's Up!
-    // console log done
-    console.log("done");
-    $("#time-left").append("<h2>Time's Up!</h2>");
-    console.log("time is up");
+
+var number = 10;
+
+//  Variable that will hold our interval ID when we execute
+//  the "run" function
+var intervalId;
+
+//  When the stop button gets clicked, run the stop function.
+$("#stop").on("click", stop);
+
+//  When the resume button gets clicked, execute the run function.
+$("#resume").on("click", run);
+
+//  The run function sets an interval
+//  that runs the decrement function once a second.
+//  *****BUG FIX******** 
+//  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
+function run() {
+  clearInterval(intervalId);
+  intervalId = setInterval(decrement, 1000);
+}
+
+function start() {
+  $("#start").on("click", run);
+}
+
+//  The decrement function.
+function decrement() {
+
+  //  Decrease number by one.
+  number--;
+
+  //  Show the number in the #show-number tag.
+  $("#show-number").html("<h2>" + number + "</h2>");
 
 
-}  
+  //  Once number hits zero...
+  if (number === 0) {
 
-    function roundComplete() {
+    $("#correct").text(c + (c === 1 ? " is" : " are") + " correct! ");
+    $("#incorrect").text(I + (I === 1 ? " is" : " are") + " incorrect! ");
 
-        // First, log an initial status update in the console
-        // telling us how many wins, losses, and guesses are left.
-        console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter + " | NumGuesses: " + numGuesses);
-      
-        // HTML UPDATES
-        // ============
-      
-        // Update the HTML to reflect the new number of guesses.
-        document.getElementById("guesses-left").innerHTML = numGuesses;
-      
-        // This will print the array of guesses and blanks onto the page.
-        document.getElementById("word-blanks").innerHTML = blanksAndSuccesses.join(" ");
-      
-        // This will print the wrong guesses onto the page.
-        document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
-      
-        // If our Word Guess string equals the solution.
-        // (meaning that we guessed all the letters to match the solution)...
-        if (lettersInChosenWord.toString() === blanksAndSuccesses.toString()) {
-      
-          // Add to the win counter
-          winCounter++;
-      
-          // Give the user an alert
-          alert("You win!");
-      
-          // Update the win counter in the HTML
-          document.getElementById("win-counter").innerHTML = winCounter;
-      
-          // Restart the game
-          startGame();
-        }
-      
-        // If we've run out of guesses
-        else if (numGuesses === 0) {
-      
-          // Add to the loss counter
-          lossCounter++;
-      
-          // Give the user an alert
-          alert("You lose");
-      
-          // Update the loss counter in the HTML
-          document.getElementById("loss-counter").innerHTML = lossCounter;
-      
-          // Restart the game
-          startGame();
-      
-        }
-      
-      }
+    //  ...run the stop function.
+    stop();
+
+    //  Alert the user that time is up.
+    alert("Time Up! " + (c + (c === 1 ? " is" : " are") + " correct. ") + (I + (I === 1 ? " is" : " are") + " incorrect. "));
+
+  }
+}
+
+//  The stop function
+function stop() {
+
+  //  Clears our intervalId
+  //  We just pass the name of the interval
+  //  to the clearInterval function.
+  clearInterval(intervalId);
+}
+
+$("#start").on("click", start);
+

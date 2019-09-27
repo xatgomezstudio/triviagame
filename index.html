@@ -1,366 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trivia Game</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trivia Game</title>
 
-     <!-- Bootstrap CDN -->
-     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap CDN -->
+  <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-     <!-- JQuery -->
-     <script src="https://code.jquery.com/jquery.js"></script>
-   
+ <!-- Added link to the jQuery Library -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 
 <body>
-    <!-- Bootstrap Container will hold everything. -->
-    <div class="container">
+  <!-- Bootstrap Container will hold everything. -->
+  <div class="container">
 
-        <!-- Jumbotron holds the title section. -->
-        <div class='jumbotron'>
-          <div class='container'>
-            <h1>Natalie Portman Trivia Quiz</h1>
-            <h2>Answer as many questions as possible before time runs out!</h2>
-            <div id="time-left"></div>
-          </div>
-        </div>
-  
-        <!-- Game counters held here. cards are being used to hold various sections. -->
-        <div class="row">
-          <div class="col-lg-12">
-  
-            <!-- First card: Question 1. -->
-            <div class="card card-default">
-              <div class="card-header">
-                <h3 class="card-title"><strong>Question 1: She moved to the US at the age of 3. </strong></h3>
-              </div>
-  
-              <div class="card-body">
-  
-                <!-- This the form and multiple choice section using bootstrap.  -->
-                <div class="form-check">
-                        <input class="form-check-input" type="radio" name="questionone" id="exampleRadios1" value="option1">
-                        <label class="form-check-label" for="exampleRadios1">
-                          True
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="questionone" id="exampleRadios2" value="option2">
-                        <label class="form-check-label" for="exampleRadios2">
-                          False
-                        </label>
-                      </div>
-  
-              </div>
-  
-            </div>
-
-            <br>
-
-            <!-- First card: Question 2. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 2: The makeup brand Stila has a lip gloss named after her. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questiontwo" id="exampleRadios1" value="option3">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questiontwo" id="exampleRadios2" value="option4">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 3. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 3: Graduated from Harvard College in Cambridge, Massachusetts in 2003 with a Artium Baccalaureus degree in Psychology. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionthree" id="exampleRadios1" value="option5">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionthree" id="exampleRadios2" value="option6">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 4. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 4: She lives in Long Island. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionfour" id="exampleRadios1" value="option7">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionfour" id="exampleRadios2" value="option8">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 5. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 5: Is of entirely Ashkenazi Jewish descent. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionfive" id="exampleRadios1" value="option9">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionfive" id="exampleRadios2" value="option10">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 6. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 6: Unwinds by singing Wu-Tang Clan karaoke at Winnie's, a New York City bar in Chinatown. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionsix" id="exampleRadios1" value="option11">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionsix" id="exampleRadios2" value="option12">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 7. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 7: Married to Black Swan (2010) choreographer Benjamin Millepied, with whom she has two children. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionseven" id="exampleRadios1" value="option13">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionseven" id="exampleRadios2" value="option14">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 8. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 8: Her paternal great grandparents were killed at the Auschwitz concentration camp in Poland. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questioneight" id="exampleRadios1" value="option15">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="exampleeight" id="exampleRadios2" value="option16">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 9. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 9: Is a dual citizen of the United States and Israel. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionnine" id="exampleRadios1" value="option17">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionnine" id="exampleRadios2" value="option18">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-
-            <!-- First card: Question 10. -->
-            <div class="card card-default">
-                    <div class="card-header">
-                      <h3 class="card-title"><strong>Question 10: She technically qualified for MENSA. </strong></h3>
-                    </div>
-        
-                    <div class="card-body">
-        
-                      <!-- This the form and multiple choice section using bootstrap.  -->
-                      <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionten" id="exampleRadios1" value="option19">
-                              <label class="form-check-label" for="exampleRadios1">
-                                True
-                              </label>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="radio" name="questionten" id="exampleRadios2" value="option20">
-                              <label class="form-check-label" for="exampleRadios2">
-                                False
-                              </label>
-                            </div>
-        
-                    </div>
-        
-                  </div>
-      
-                  <br>
-  
-            <!-- Second card: Holds the list of Wrong User Guesses. -->
-            <div class="card card-default">
-              <div class="card-body">
-  
-                <!-- This span section called wrong-guesses is where we will be dumping the wrong guesses. Pay particular attention to the id called ****wrong-guesses***. We"ll be referencing this in the JavaScript. -->
-                <strong>Unanswered Questions: </strong> <span id="wrong-guesses"></span>
-  
-              </div>
-            </div>
-
-            <br>
-  
-            <!-- Third card: Holds the Number of Wrong Guesses. -->
-            <div class="card card-default">
-              <div class="card-body">
-
-  
-            <!-- Fourth card: Holds the number of Wins. -->
-            <div class="card card-default">
-  
-              <div class="card-body">
-  
-                <!-- This span called win-counter is where we"ll be dumping the number of wins. Pay attention to the id called ****win-counter*** we"ll be referencing this in the JavaScript. -->
-                <strong>Correct Answers: </strong> <span id="win-counter">0</span>
-  
-              </div>
-  
-            </div>
-
-            <br>
-  
-            <!-- Fifth card: Holds the number of Losses. -->
-            <div class="card card-default">
-              <div class="card-body">
-  
-                <!-- This span called loss-counter is where we"ll be dumping the number of losses. Pay attention to the id called ****loss-counter***; we"ll be referencing this in the JavaScript. -->
-                <strong>Incorrect Answers: </strong> <span id="loss-counter">0</span>
-  
-              </div>
-  
-            </div>
-  
-          </div>
-  
-        </div>
-  
+    <!-- Jumbotron holds the title section. -->
+    <div class='jumbotron'>
+      <div class='container'>
+        <h1>Natalie Portman Trivia Quiz</h1>
+        <h2>Answer as many questions as possible before time runs out!</h2>
+        <br>
+        <div id="time-left">Time Remaining:</div>
+        <div id="show-number"></div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="resume">Resume</button>
+        <br>
+        <br>
+        <div id="correct"></div>
+        <div id="incorrect"></div>
       </div>
+    </div>
+
+    <!-- Game counters held here. cards are being used to hold various sections. -->
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- First card: Question 1. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 1: She moved to the US at the age of 3. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionone" id="exampleRadios1"
+                value="option1">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionone" id="exampleRadios2"
+                value="option2">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 2. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 2: The makeup brand Stila has a lip gloss named after her. </strong>
+            </h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questiontwo" id="exampleRadios1"
+                value="option3">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questiontwo" id="exampleRadios2"
+                value="option4">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 3. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 3: Graduated from Harvard College in Cambridge, Massachusetts in
+                2003 with a Artium Baccalaureus degree in Psychology. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionthree" id="exampleRadios1"
+                value="option5">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionthree" id="exampleRadios2"
+                value="option6">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 4. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 4: She lives in Long Island. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionfour" id="exampleRadios1"
+                value="option7">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionfour" id="exampleRadios2"
+                value="option8">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 5. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 5: Is of entirely Ashkenazi Jewish descent. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionfive" id="exampleRadios1"
+                value="option9">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionfive" id="exampleRadios2"
+                value="option10">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 6. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 6: Unwinds by singing Wu-Tang Clan karaoke at Winnie's, a New York
+                City bar in Chinatown. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionsix" id="exampleRadios1"
+                value="option11">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionsix" id="exampleRadios2"
+                value="option12">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 7. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 7: Married to Black Swan (2010) choreographer Benjamin Millepied,
+                with whom she has two children. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionseven" id="exampleRadios1"
+                value="option13">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionseven" id="exampleRadios2"
+                value="option14">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 8. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 8: Her paternal great grandparents were killed at the Auschwitz
+                concentration camp in Poland. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questioneight" id="exampleRadios1"
+                value="option15">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="exampleeight" id="exampleRadios2"
+                value="option16">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 9. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 9: Is a dual citizen of the United States and Israel. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionnine" id="exampleRadios1"
+                value="option17">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionnine" id="exampleRadios2"
+                value="option18">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <!-- First card: Question 10. -->
+        <div class="card card-default">
+          <div class="card-header">
+            <h3 class="card-title"><strong>Question 10: She technically qualified for MENSA. </strong></h3>
+          </div>
+
+          <div class="card-body">
+
+            <!-- This the form and multiple choice section using bootstrap.  -->
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionten" id="exampleRadios1"
+                value="option19">
+              <label class="form-check-label" for="exampleRadios1">
+                True
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input questions" type="radio" name="questionten" id="exampleRadios2"
+                value="option20">
+              <label class="form-check-label" for="exampleRadios2">
+                False
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
   
-      <!-- Adds a link to the JavaScript file. Loaded at the bottom so it waits for the HTML content to display first. If you put this at the top it will crash, because the HTML IDs won"t exist yet.-->
-      <script src="logic.js"></script>
+  <!-- Script Tags -->
+  <script type="text/javascript" src=assets/app.js></script>
+  <div id="jqueryTags">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+  </div>
+
+  <!-- Adds a link to the JavaScript file. Loaded at the bottom so it waits for the HTML content to display first. If you put this at the top it will crash, because the HTML IDs won"t exist yet.-->
+  <script src="assets/app.js"></script>
 </body>
+
 </html>
